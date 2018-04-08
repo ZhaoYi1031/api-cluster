@@ -88,7 +88,7 @@ private int n;
 	    	tot2 += i.replace(" ","").length();
 	    }
 	    System.out.println("tot1="+tot1+" tot2="+tot2);
-	    return 1-1.0*tot1/tot2;
+	    return Math.sqrt(1-1.0*tot1*tot1/(tot2*tot2));//1-1.0*tot1/tot2;
 //		for (int i = 0; i < dimension; ++i) {
 //			val += (one.attributes[i] - two.attributes[i]) * (one.attributes[i] - two.attributes[i]);
 //		}
@@ -248,10 +248,15 @@ private int n;
 	 }
 	
 	 public void printOutput(String path) {
-		 processHierarchical(path, 0.8);
+		 processHierarchical(path, 0.999);
 	 }
 	
 	 public static void main(String[] args) {
+		 ArrayList<String> arraylist = new ArrayList<String>();
+		 arraylist.add("fuck");
+		 arraylist.add("u");
+		 arraylist.add("ok");
+//		 System.out.println(arraylist[0]);
 		 Hierarchical hi = new Hierarchical();
 		 hi.setInput("usage_data/test.txt");//"hierarchical.txt");
 		 hi.printOutput("hierarchical_results.txt");
